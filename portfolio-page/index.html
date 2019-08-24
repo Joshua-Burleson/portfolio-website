@@ -10,7 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<!-- <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript> -->
 	</head>
 	<body class="is-preload">
 
@@ -43,7 +43,7 @@
 				<!-- Banner -->
 					<section id="banner">
 						<div class="inner">
-							<div class="logo"><span class="fas fa-terminal fa-3x"></span><h2>Joshua Burleson</h2></div>
+							<div class="logo"><span class="fas fa-chevron-right fa-3x"></span><span class="fas underscore fa-3x">_</span><h2>Joshua Burleson</h2></div>
 							<p>&lt; Full Stack Developer/&gt;</p>
 						</div>
 					</section>
@@ -56,7 +56,7 @@
 								<div class="inner">
 									<a href="#" class="image"><img src="images/frontend-books.jpg" alt="" /></a>
 									<div class="content">
-										<h2 class="major">Front-End Development</h2>
+										<h2 class="major"><span class="html-decoration">&lt;h2&gt;</span>Front-End Development<span class="html-decoration">&lt;/h2&gt;</span></h2>
 										<p>Bring your brand and vision to life. I love using modern responsive and accessible principles and practices to develop beautiful, interactive experiences.</p>
 										<a href="#" class="special">Learn more</a>
 									</div>
@@ -66,9 +66,9 @@
 						<!-- Back-End -->
 							<section id="two" class="wrapper alt spotlight style2">
 								<div class="inner">
-									<a href="#" class="image"><img src="images/node-js.jpg" alt="" /></a><!--<a href="https://icon-library.net/icon/node-js-icon-11.html">Node Js Icon #183360</a>-->
+									<a href="#" class="image node-img"><img src="images/node-js.jpg" alt="" /></a><!--<a href="https://icon-library.net/icon/node-js-icon-11.html">Node Js Icon #183360</a>-->
 									<div class="content">
-										<h2 class="major">Back-End Server Development</h2>
+										<h2 class="major"><span class="js-class">class</span>Back-End Server Development {<span class="node-text"> <span>constructor</span>(dev); </span><br> <span class="node-text"><span>return</span> joshuaBurleson;</span><br>}</h2>
 										<p>Keep your site, app, and data nimble and secure. With a focus on security, ingenuity, and best practices I'm passionate about developing, updating, and maintaining your data's cyber homebase. I currently specialize in Node.js and MongoDB but have experience with relational databases and am always open to /*quickly*/ learning new and exciting stacks!</p>
 										<a href="#" class="special">Learn more</a>
 									</div>
@@ -90,36 +90,35 @@
 						<!-- Four -->
 							<section id="four" class="wrapper alt style1">
 								<div class="inner">
-									<h2 class="major">Vitae phasellus</h2>
-									<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+									<h2 class="major">Selected Projects</h2>
 									<section class="features">
 										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
-											<h3 class="major">Sed feugiat lorem</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+											<a href="/UI-III-Flexbox" class="image"><img src="images/great-idea-preview.jpg" alt="great idea site" /></a>
+											<h3 class="major">"Great Idea!" Responsive Web Page</h3>
+											<p>A fully-responsive website for a simulated tech company. (Lambda School Project)</p>
 											<a href="#" class="special">Learn more</a>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic05.jpg" alt="" /></a>
-											<h3 class="major">Nisl placerat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+											<a href="https://www.npmjs.com/package/node-appleauth" class="image"><img src="images/node-appleauth-prev.jpg" alt="node apple auth npm package" /></a>
+											<h3 class="major">Node appleAuth</h3>
+											<p>A Node.JS and Express-based novelty authentication system leveraging Apple's iCloud API.</p>
 											<a href="#" class="special">Learn more</a>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic06.jpg" alt="" /></a>
-											<h3 class="major">Ante fermentum</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+											<a href="#" class="image"><img src="images/calc.png" alt="" /></a>
+											<h3 class="major">jQuery Calculator</h3>
+											<p>A simple static-page-based calculator written in HTML CSS and Javascript with jQuery. (freeCodeCamp Project)</p>
 											<a href="#" class="special">Learn more</a>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-											<h3 class="major">Fusce consequat</h3>
-											<p>Lorem ipsum dolor sit amet, consectetur adipiscing vehicula id nulla dignissim dapibus ultrices.</p>
+											<a href="#" class="image"><img src="images/exercise-tracker-prev.jpg" alt="" /></a>
+											<h3 class="major">Exercise Tracker API</h3>
+											<p>A Node.JS, Express, and MongoDB-based RESTful API for submitting, saving, and retrieving user exercise data. (freeCodeCamp Project)</p>
 											<a href="#" class="special">Learn more</a>
 										</article>
 									</section>
 									<ul class="actions">
-										<li><a href="#" class="button">Browse All</a></li>
+										<li><button id="browseAll" onclick="moreToCome()" class="button">Browse All</button></li>
 									</ul>
 								</div>
 							</section>
@@ -130,7 +129,7 @@
 					<section id="footer">
 						<div class="inner">
 							<h2 class="major">Get in touch</h2>
-							<p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus. Sed ac elementum arcu. Quisque placerat auctor laoreet.</p>
+							<p>Got a question or want to work together? Reach out! Whether you're hiring, looking to collaborate, or just want to chat about your website, API, or application, I'd love to hear from you.</p>
 							<form method="post" action="#">
 								<div class="fields">
 									<div class="field">
@@ -157,10 +156,10 @@
 									Essex Jct, VT 05452
 								</li>
 								<li class="icon solid fa-phone">(802) 324-7869</li>
-								<li class="icon solid fa-envelope"><a href="#">joshua.burleson.developer@gmail.com</a></li>
-								<li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
-								<li class="icon brands fa-facebook-f"><a href="#">facebook.com/joshua.x.burleson</a></li>
-								<li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li>
+								<li class="icon solid fa-envelope"><a href="mailto:joshua.burleson.developer@gmail.com">joshua.burleson.developer@gmail.com</a></li>
+								<li class="icon brands fa-github"><a href="https://github.com/Joshua-Burleson">github.com/Joshua-Burleson</a></li>
+								<li class="icon brands fa-facebook-f"><a href="https://facebook.com/joshua.x.burleson">facebook.com/joshua.x.burleson</a></li>
+								<li class="icon brands fa-instagram"><a href="https://instagram.com/burlesonjoshua">instagram.com/burlesonjoshua</a></li>
 							</ul>
 							<ul class="copyright">
 								<li>&copy; Untitled Inc. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>

@@ -1,5 +1,7 @@
 @import url(fontawesome-all.min.css);
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
+@import url('https://fonts.googleapis.com/css?family=Space+Mono&display=swap');
+
 
 /*
 	Solid State by HTML5 UP
@@ -3402,25 +3404,25 @@ input, select, textarea {
 			-ms-transform: translateY(0);
 			transform: translateY(0);
 			opacity: 1;
-			margin: 0 0 0.25rem 0;
+			margin: 0 auto 0;
 			display: flex;
 		}
 
-		#banner .logo .fa-terminal{
+		/* #banner .logo .fa-terminal{
 			margin-right: 1rem;
-		}
+		} */
 
-			#banner .logo .icon {
-				border-radius: 100%;
-				border: solid 2px rgba(255, 255, 255, 0.125);
-				cursor: default;
-				display: inline-block;
-				font-size: 2em;
-				height: 2.25em;
-				line-height: 2.25em;
-				text-align: center;
-				width: 2.25em;
-			}
+		#banner .logo .icon {
+			border-radius: 100%;
+			border: solid 2px rgba(255, 255, 255, 0.125);
+			cursor: default;
+			display: inline-block;
+			font-size: 2em;
+			height: 2.25em;
+			line-height: 2.25em;
+			text-align: center;
+			width: 2.25em;
+		}
 
 		#banner h2 {
 			-moz-transition: opacity 0.5s ease, -moz-transform 0.5s ease, -moz-filter 0.25s ease;
@@ -3495,9 +3497,9 @@ input, select, textarea {
 				margin-bottom: -4.75em;
 			}
 
-				#banner .inner {
-					width: 100%;
-				}
+			#banner .inner {
+				width: 100%;
+			}
 
 		}
 
@@ -3696,6 +3698,125 @@ input, select, textarea {
 			padding: 3em 0 1em 0 ;
 			margin: 0 auto;
 			width: 55em;
+		}
+
+		/*  */
+
+		#banner .inner .logo h2{
+			font-family: 'Space Mono', monospace;
+		}
+
+		#banner .inner .logo .underscore {
+			font-weight: 900;
+			font-size: 3rem;
+			margin-left: -0.5rem;
+			color: white;
+			animation: terminal-blink 0.5s infinite alternate;
+			animation-delay: 1s;
+		}
+
+		#banner .inner .logo h2 {
+			position: relative;
+		}
+		#banner .inner .logo h2:after {
+			content: "joshua_bur";
+			position: absolute;
+			left: 0;
+			clip: rect(0, 10rem, 0, 0);
+			background-color: black;
+			color: green;
+			animation: terminal-glitch 2s, disappear 5s, forwards;
+			animation-delay: 1s;
+		}
+
+		@keyframes terminal-blink {
+			0%{
+				color: black;
+				display: initial;
+			}
+			100%{
+				display: hidden;
+				opacity: 0;
+			}
+		}
+
+		@keyframes terminal-glitch {
+			0% {
+				text-transform: lowercase;
+				clip: rect(5rem, 10rem, 9rem, 0);
+			}
+			10% {
+				clip: rect(1.5rem, 20rem, 6rem, 0);
+			}
+			20% {
+				clip: rect(13px, 9999px, 51px, 0);
+			}
+			30% {
+				clip: rect(11px, 9999px, 15px, 0);
+			}
+			40% {
+				clip: rect(48px, 9999px, 90px, 0);
+			}
+			50% {
+				clip: rect(36px, 0, 69px, 0);
+			}
+			60% {
+				clip: rect(63px, 9999px, 51px, 0);
+			}
+			70% {
+				clip: rect(56px, 9999px, 33px, 0);
+			}
+			80% {
+				clip: rect(32px, 9999px, 46px, 0);
+			}
+			90% {
+				clip: rect(59px, 9999px, 78px, 0);
+			}
+			100% {
+				clip: rect(52px, 9999px, 79px, 0);
+				width: 100%;
+			}
+		}  /* Modified from */
+		
+		@keyframes disappear{
+			0%{
+				display: initial;
+			}
+			100%{
+				display: none;
+			}
+		}
+
+		/*  */
+
+		.node-img{
+			height: 16rem;
+			width: 10rem;
+		}
+
+		.js-const, .html-decoration{
+			text-transform: lowercase;
+		}
+
+		.js-class{
+			margin-right: 0.75rem;
+			font-size: 0.9rem;
+			color: lightblue;
+		}
+
+		.node-text{
+			text-transform: initial;
+			margin-left: 20%;
+			font-size: 1rem;
+		}
+
+		.node-text span{
+			color: lightblue;
+		}
+
+		#four .inner .actions{
+			display: flex;
+			justify-content: center;
 		}
 
 		.wrapper.style2 {

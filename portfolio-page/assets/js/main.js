@@ -42,6 +42,21 @@
 
 		}
 
+		const setFont = async () => {
+			console.log('running')
+			const xhttp = new XMLHttpRequest();
+			xhttp.onreadystatechange = async () => {
+				console.log('state changed')
+				let result = await this.status;
+				console.log(result);
+			}
+			xhttp.open('GET', 'https://googleapis.com/webfonts/v1/webfonts?sort=popularity?key=AIzaSyCT4hHBIUuySUHR-Ma60n3AObNn3GOy7gI', true);
+			xhttp.send();
+
+		}
+	setFont();
+		
+
 	// Menu.
 		var $menu = $('#menu');
 
@@ -141,5 +156,8 @@
 						$menu._hide();
 
 			});
-
 })(jQuery);
+
+const moreToCome = () => {
+			document.getElementById('browseAll').innerHTML = "More to Come!";
+		}
