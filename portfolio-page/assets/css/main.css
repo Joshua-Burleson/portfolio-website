@@ -3381,8 +3381,9 @@ input, select, textarea {
 
 	#banner {
 		padding: 10em 0 4.75em 0 ;
-		background-image: url('../../images/mountains.jpg');
-		background-size: cover;
+		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/mountains.jpg");
+		background-size: auto, cover;
+		background-position: center, center;
 		color: black;
 	}
 
@@ -3407,10 +3408,6 @@ input, select, textarea {
 			margin: 0 auto 0;
 			display: flex;
 		}
-
-		/* #banner .logo .fa-terminal{
-			margin-right: 1rem;
-		} */
 
 		#banner .logo .icon {
 			border-radius: 100%;
@@ -3442,7 +3439,6 @@ input, select, textarea {
 			-ms-filter: blur(0);
 			filter: blur(0);
 			opacity: 1;
-			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 			font-size: 2.25em;
 			margin-bottom: 0.8em;
 			padding-bottom: 0.4em;
@@ -3480,12 +3476,10 @@ input, select, textarea {
 			#banner {
 				padding: 7em 0 8.25em 0 ;
 				background-color: #2e3141;
-				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
-				background-size: auto,
- cover;
-				background-position: center,
- center;
-				margin-bottom: -6.5em;
+				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/mountains.jpg");
+				background-size: auto,cover;
+				background-position: center, center;
+				margin-top: 3rem;
 			}
 
 		}
@@ -3514,12 +3508,14 @@ input, select, textarea {
 					margin: 0 0 1em 0;
 				}
 
-					#banner .logo .icon {
-						font-size: 1.5em;
-					}
+				#banner .logo .fa-chevron-right {
+					margin-top: 1rem;
+					font-size: 2rem;
+				}
 
 				#banner h2 {
 					font-size: 1.5em;
+					margin-top: 1rem;
 				}
 
 				#banner p {
@@ -3717,16 +3713,42 @@ input, select, textarea {
 
 		#banner .inner .logo h2 {
 			position: relative;
+			animation: text-glitch 4s forwards;
+			animation-delay: 3s;
 		}
+
 		#banner .inner .logo h2:after {
-			content: "joshua_bur";
+			content: "joshua_burleson";
 			position: absolute;
 			left: 0;
 			clip: rect(0, 10rem, 0, 0);
 			background-color: black;
 			color: green;
-			animation: terminal-glitch 2s, disappear 5s, forwards;
-			animation-delay: 1s;
+			animation: terminal-glitch 4s, disappear 5s, forwards;
+			animation-delay: 2s;
+		}
+
+		@keyframes text-glitch{
+			0%{
+				font-style: italic;
+				font-variant: small-caps;
+			}
+			25%{
+				font-style: initial;
+				background-clip: 2rem 0 6rem;
+			}
+			50%{
+				font-style: italic;
+				content: 'Joshua_Burleson'
+			}
+			75%{
+				font-style: initial;
+				color: black;
+			}
+			100%{
+				font-style: italic;
+				font-variant: initial
+			}
 		}
 
 		@keyframes terminal-blink {
@@ -3743,40 +3765,105 @@ input, select, textarea {
 		@keyframes terminal-glitch {
 			0% {
 				text-transform: lowercase;
-				clip: rect(5rem, 10rem, 9rem, 0);
-			}
-			10% {
-				clip: rect(1.5rem, 20rem, 6rem, 0);
-			}
-			20% {
-				clip: rect(13px, 9999px, 51px, 0);
-			}
-			30% {
-				clip: rect(11px, 9999px, 15px, 0);
-			}
-			40% {
-				clip: rect(48px, 9999px, 90px, 0);
-			}
-			50% {
-				clip: rect(36px, 0, 69px, 0);
-			}
-			60% {
-				clip: rect(63px, 9999px, 51px, 0);
-			}
-			70% {
-				clip: rect(56px, 9999px, 33px, 0);
-			}
-			80% {
-				clip: rect(32px, 9999px, 46px, 0);
-			}
-			90% {
-				clip: rect(59px, 9999px, 78px, 0);
-			}
-			100% {
-				clip: rect(52px, 9999px, 79px, 0);
+				clip: rect(4rem, 100rem, 27rem, 0);
+			  }
+			  5% {
+				clip: rect(5rem, 100rem, 16rem, 0);
+			  }
+			  10% {
+				clip: rect(3rem, 100rem, 3rem, 0);
+			  }
+			  15% {
+				clip: rect(4rem, 100rem, 1rem, 0);
+			  }
+			  20% {
+				clip: rect(7rem, 100rem, 21rem, 0);
+			  }
+			  25% {
+				clip: rect(4rem, 100rem, 9rem, 0);
+			  }
+			  30% {
+				clip: rect(2rem, 100rem, 15rem, 0);
+			  }
+			  35% {
+				clip: rect(6rem, 100rem, 16rem, 0);
+			  }
+			  40% {
+				clip: rect(4rem, 100rem, 16rem, 0);
+			  }
+			  45% {
+				clip: rect(8rem, 100rem, 20rem, 0);
+			  }
+			  50% {
+				clip: rect(4rem, 100rem, 4rem, 0);
+			  }
+			  55% {
+				clip: rect(6rem, 100rem, 6rem, 0);
+			  }
+			  60% {
+				clip: rect(6rem, 100rem, 13rem, 0);
+			  }
+			  65% {
+				clip: rect(1rem, 100rem, 13rem, 0);
+			  }
+			  70% {
+				clip: rect(8rem, 100rem, 14rem, 0);
+			  }
+			  75% {
+				clip: rect(2rem, 100rem, 12rem, 0);
+			  }
+			  80% {
+				clip: rect(1rem, 100rem, 20rem, 0);
+			  }
+			  85% {
+				clip: rect(7rem, 100rem, 3rem, 0);
+			  }
+			  90% {
+				clip: rect(5rem, 100rem, 17rem, 0);
+			  }
+			  95% {
+				clip: rect(8rem, 100rem, 5rem, 0);
+			  }
+			  100% {
+				clip: rect(5rem, 100rem, 27rem, 0);
 				width: 100%;
-			}
-		}  /* Modified from */
+			  }
+			/* 0% {
+				text-transform: lowercase;
+				clip: rect(4rem, 100rem, 20rem, 0);
+			  }
+			  10% {
+				clip: rect(1rem, 100rem, 7rem, 0);
+			  }
+			  20% {
+				clip: rect(3rem, 100rem, 12rem, 0);
+			  }
+			  30% {
+				clip: rect(4rem, 100rem, 21rem, 0);
+			  }
+			  40% {
+				clip: rect(1rem, 100rem, 2rem, 0);
+			  }
+			  50% {
+				clip: rect(5rem, 100rem, 8rem, 0);
+			  }
+			  60% {
+				clip: rect(6rem, 100rem, 1rem, 0);
+			  }
+			  70% {
+				clip: rect(2rem, 100rem, 5rem, 0);
+			  }
+			  80% {
+				clip: rect(5rem, 100rem, 10rem, 0);
+			  }
+			  90% {
+				clip: rect(2rem, 100rem, 14rem, 0);
+			  }
+			  100% {
+				clip: rect(6rem, 100rem, 19rem, 0);
+				width: 100%;
+			  } */
+		}  /* Inspired by gstorbek's "Glitch Text" on codepen https://codepen.io/gstorbeck/pen/gwRkzJ*/
 		
 		@keyframes disappear{
 			0%{
