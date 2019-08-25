@@ -3932,6 +3932,10 @@ input, select, textarea {
 			font-size: 1rem;
 		}
 
+		#two .inner .content .major .node-bracket{
+			color: white;
+		}
+
 		.small-nb{
 			font-family: 'Space Mono', 'monospace';
 			font-size: 0.75rem;
