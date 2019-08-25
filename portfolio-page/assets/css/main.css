@@ -102,13 +102,10 @@ input, select, textarea {
 
 	body {
 		background-color: #2e3141;
-		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
-		background-size: auto,
- cover;
-		background-attachment: fixed,
- fixed;
-		background-position: center,
- center;
+		background-image: url("../../images/bg.jpg");
+		background-size: auto, cover;
+		background-attachment: fixed, fixed;
+		background-position: center, center;
 	}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -3381,7 +3378,7 @@ input, select, textarea {
 
 	#banner {
 		padding: 10em 0 4.75em 0 ;
-		background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/mountains.jpg");
+		background-image: url("../../images/mountains.jpg");
 		background-size: auto, cover;
 		background-position: center, center;
 		color: black;
@@ -3476,7 +3473,7 @@ input, select, textarea {
 			#banner {
 				padding: 7em 0 8.25em 0 ;
 				background-color: #2e3141;
-				background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/mountains.jpg");
+				background-image: url("../../images/mountains.jpg");
 				background-size: auto,cover;
 				background-position: center, center;
 				margin-top: 3rem;
@@ -3706,8 +3703,8 @@ input, select, textarea {
 			font-weight: 900;
 			font-size: 3rem;
 			margin-left: -0.5rem;
-			color: white;
-			animation: terminal-blink 0.5s infinite alternate;
+			color: black;
+			animation: terminal-blink 0.8s infinite forwards;
 			animation-delay: 1s;
 		}
 
@@ -3724,8 +3721,15 @@ input, select, textarea {
 			clip: rect(0, 10rem, 0, 0);
 			background-color: black;
 			color: green;
-			animation: terminal-glitch 4s, disappear 5s, forwards;
+			animation: terminal-blink 0.2s, terminal-glitch 4s, disappear 5s, forwards;
 			animation-delay: 2s;
+		}
+
+		#banner .inner p::before{
+			content: '|';
+			animation: typeDev 4.25s, forwards;
+			animation-fill-mode: forwards;
+			animation-delay: 6s;
 		}
 
 		@keyframes text-glitch{
@@ -3738,11 +3742,10 @@ input, select, textarea {
 				background-clip: 2rem 0 6rem;
 			}
 			50%{
-				font-style: italic;
 				content: 'Joshua_Burleson'
 			}
 			75%{
-				font-style: initial;
+				font-style: italic;
 				color: black;
 			}
 			100%{
@@ -3754,10 +3757,10 @@ input, select, textarea {
 		@keyframes terminal-blink {
 			0%{
 				color: black;
-				display: initial;
 			}
 			100%{
-				display: hidden;
+				visibility: hidden;
+				backface-visibility: hidden;
 				opacity: 0;
 			}
 		}
@@ -3828,41 +3831,6 @@ input, select, textarea {
 				clip: rect(5rem, 100rem, 27rem, 0);
 				width: 100%;
 			  }
-			/* 0% {
-				text-transform: lowercase;
-				clip: rect(4rem, 100rem, 20rem, 0);
-			  }
-			  10% {
-				clip: rect(1rem, 100rem, 7rem, 0);
-			  }
-			  20% {
-				clip: rect(3rem, 100rem, 12rem, 0);
-			  }
-			  30% {
-				clip: rect(4rem, 100rem, 21rem, 0);
-			  }
-			  40% {
-				clip: rect(1rem, 100rem, 2rem, 0);
-			  }
-			  50% {
-				clip: rect(5rem, 100rem, 8rem, 0);
-			  }
-			  60% {
-				clip: rect(6rem, 100rem, 1rem, 0);
-			  }
-			  70% {
-				clip: rect(2rem, 100rem, 5rem, 0);
-			  }
-			  80% {
-				clip: rect(5rem, 100rem, 10rem, 0);
-			  }
-			  90% {
-				clip: rect(2rem, 100rem, 14rem, 0);
-			  }
-			  100% {
-				clip: rect(6rem, 100rem, 19rem, 0);
-				width: 100%;
-			  } */
 		}  /* Inspired by gstorbek's "Glitch Text" on codepen https://codepen.io/gstorbeck/pen/gwRkzJ*/
 		
 		@keyframes disappear{
@@ -3873,6 +3841,89 @@ input, select, textarea {
 				display: none;
 			}
 		}
+
+		@keyframes typeDev{
+			0%{
+				content: '|';
+			}
+			4%{
+				content: '<|'
+			}
+			8%{
+				content: '< F|'
+			}
+			12%{
+				content: '< Fu|';
+			}
+			16%{
+				content: '< Ful|';
+			}
+			20%{
+				content: '< Full|';
+			}
+			24%{
+				content: '< Full| ';
+			}
+			28%{
+				content: '< Full S|';
+			}
+			32%{
+				content: '< Full St|';
+			}
+			36%{
+				content: '< Full Sta|';
+			}
+			40%{
+				content: '< Full Stac|';
+			}
+			44%{
+				content: '< Full Stack|';
+			}
+			48%{
+				content: '< Full Stack |';
+			}
+			52%{
+				content: '< Full Stack D|';
+			}
+			56%{
+				content: '< Full Stack De';
+			}
+			60%{
+				content: '< Full Stack Dev|';
+			}
+			64%{
+				content: '< Full Stack Deve|';
+			}
+			68%{
+				content: '< Full Stack Devel';
+			}
+			72%{
+				content: '< Full Stack Develo|';
+			}
+			76%{
+				content: '< Full Stack Develop';
+			}
+			80%{
+				content: '< Full Stack Develope|';
+			}
+			84%{
+				content: '< Full Stack Developer|';
+			}
+			88%{
+				content: '< Full Stack Developer>|';
+			}
+			92%{
+				content: '< Full Stack Developer|';
+			}
+			96%{
+				content: '< Full Stack Developer/|';
+			}
+			100%{
+				content: '< Full Stack Developer/>';
+			}
+
+		}
+
 
 		/*  */
 

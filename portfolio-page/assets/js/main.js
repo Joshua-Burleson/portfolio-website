@@ -42,20 +42,6 @@
 
 		}
 
-		const setFont = async () => {
-			console.log('running')
-			const xhttp = new XMLHttpRequest();
-			xhttp.onreadystatechange = async () => {
-				console.log('state changed')
-				let result = await this.status;
-				console.log(result);
-			}
-			xhttp.open('GET', 'https://googleapis.com/webfonts/v1/webfonts?sort=popularity?key=AIzaSyCT4hHBIUuySUHR-Ma60n3AObNn3GOy7gI', true);
-			xhttp.send();
-
-		}
-	setFont();
-		
 
 	// Menu.
 		var $menu = $('#menu');
@@ -157,6 +143,51 @@
 
 			});
 })(jQuery);
+
+
+const newFonts = () => {
+	//Clear Menu to avoid overflow
+	document.getElementsByClassName('links')[0].innerHTML = '';
+
+	//Access GoogleAPIs webfonts service and sort by popularity
+	fetch('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyCKDRrItgVcxrwi8AZwgqMnK4hyEC5tCoY&sort=popularity',{
+		headers: { 
+			'Content-Type': 'application/json; charset=utf8'
+			}
+		})   //Parse response as JSON
+		.then(responseData => responseData.json())
+		.then(fontData => { //Generate a random number between 5 (the length of our upcoming array) and 955 (the current amount of fonts)
+			let arrayEndNum = Math.floor(5 + Math.random(1)*955);
+			let fontArray = []; //Empty array for pseudo-random fonts
+			for(let i = 0; i < 5; i++){ 
+				let currentFont = fontData.items[arrayEndNum - 5 + Number(i)] //Select from our webfont JSON
+				fontArray.push({ //Push object with font-family and link for HTML 
+					fontFamily: currentFont.family,
+					htmlLink: `https://fonts.googleapis.com/css?family=${currentFont.family}&display=swap`
+				});
+			}
+				//Iterate through array of font objects we just created
+			fontArray.forEach(font => {
+				//First, add a tag to our HTML file so we can access our fonts
+				let linkTag = document.getElementsByTagName('head')[0].appendChild(document.createElement('link')); //Create link tag
+				linkTag.href = font.htmlLink; //add font link as href
+				linkTag.rel = 'stylesheet'; // rel='stylesheet'
+
+				//Now, let's put those fonts in our menu
+				let fontMenuLi = document.getElementsByClassName('links')[0].appendChild(document.createElement('li')); //Create list item
+				let fontAnchor = fontMenuLi.appendChild(document.createElement('a')); //Create anchor tag
+				fontAnchor.innerText = font.fontFamily; //Make anchor tag text = font-family name
+				fontAnchor.href = `https://fonts.google.com/specimen/${font.fontFamily}`; //Set link to site for font
+				fontAnchor.setAttribute('target', '_blank'); //Openable in a new tab or window
+				fontAnchor.style.fontFamily = font.fontFamily; //Make font-family styling = font-family from our object
+				fontAnchor.cursor = 'pointer'; //Make our anchor look cleaner with a pointer for the cursor
+			});
+		})
+		.catch(anError => console.log(anError)); //Log any errors
+}
+
+newFonts();
+
 
 const moreToCome = () => {
 			document.getElementById('browseAll').innerHTML = "More to Come!";
