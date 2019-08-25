@@ -3927,12 +3927,31 @@ input, select, textarea {
 
 		/*  */
 
+		.node-bracket{
+			font-family: 'Space Mono', 'monospace';
+			font-size: 1rem;
+		}
+
+		.small-nb{
+			font-family: 'Space Mono', 'monospace';
+			font-size: 0.75rem;
+
+		}
+
+		.small-nb-2{
+			margin-left: 20%;
+		}
+
+		.indented-return{
+			margin-left: 5%;
+		}
+
 		.node-img{
 			height: 16rem;
 			width: 10rem;
 		}
 
-		.js-const, .html-decoration{
+		.js-class, .js-const, .html-decoration{
 			text-transform: lowercase;
 		}
 
