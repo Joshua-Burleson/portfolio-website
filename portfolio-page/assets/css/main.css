@@ -3378,10 +3378,12 @@ input, select, textarea {
 
 	#banner {
 		padding: 10em 0 4.75em 0 ;
-		background-image: url("../../images/mountains.jpg");
+		background-image:  url("../../images/mountains.jpg");
 		background-size: auto, cover;
 		background-position: center, center;
 		color: black;
+		margin-bottom: -8rem;
+		height: 98vh;
 	}
 
 		#banner .inner {
@@ -3950,9 +3952,10 @@ input, select, textarea {
 			margin-left: 5%;
 		}
 
-		.node-img{
+		.wrapper .spotlight .node-img{
 			height: 16rem;
-			width: 10rem;
+			width: 22em;
+			border-radius: unset;
 		}
 
 		.js-class, .js-const, .html-decoration{
@@ -3973,6 +3976,10 @@ input, select, textarea {
 
 		.node-text span{
 			color: lightblue;
+		}
+
+		h2 .node-text-white {
+			color: white;
 		}
 
 		#four .inner .actions{
